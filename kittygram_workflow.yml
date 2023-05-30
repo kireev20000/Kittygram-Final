@@ -20,7 +20,7 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python
+    - name: Set up Python 3
       uses: actions/setup-python@v4
       with:
         python-version: 3.9
@@ -36,6 +36,7 @@ jobs:
         DB_NAME: kittygram
         DB_HOST: 127.0.0.1
         DB_PORT: 5432
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         python -m flake8 backend/
         cd backend/
@@ -165,4 +166,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ХАХА! Деплой успешно выполнен!
+        message: ХАХА! Деплой KittyGram успешно выполнен!
