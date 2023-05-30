@@ -60,7 +60,7 @@ jobs:
         with:
           context: ./backend/
           push: true
-          tags: kireev20000/kittygramm_backend:latest
+          tags: kireev20000/kittygram_backend:latest
 
   frontend_tests:
     runs-on: ubuntu-latest
@@ -100,7 +100,7 @@ jobs:
         with:
           context: ./frontend/
           push: true
-          tags: kireev20000/kittygramm_frontend:latest
+          tags: kireev20000/kittygram_frontend:latest
 
   build_nginx_and_push_to_docker_hub:
     name: Push nginx Docker image to DockerHub
@@ -120,7 +120,7 @@ jobs:
         with:
           context: ./nginx/
           push: true
-          tags: kireev20000/kittygramm_gateway:latest
+          tags: kireev20000/kittygram_gateway:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -148,7 +148,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
-          cd kittygramm
+          cd kittygram
           sudo docker compose -f docker-compose.production.yml pull
           sudo docker compose -f docker-compose.production.yml down
           sudo docker compose -f docker-compose.production.yml up -d
