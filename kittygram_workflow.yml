@@ -166,4 +166,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ХАХА! Деплой KittyGram успешно выполнен!
+        message: ХАХА! Деплой KittyGram успешно выполнен!!
