@@ -73,4 +73,5 @@ sudo docker compose -f docker-compose.yml down
 Киреев Александр Олегович  
 Python-разработчик (Backend)  
 E-mail: kireev20000@yandex.ru
+
 Telegram: @kireev20000
